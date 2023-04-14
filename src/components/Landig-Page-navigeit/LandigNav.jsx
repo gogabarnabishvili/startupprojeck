@@ -22,7 +22,11 @@ const LendigHeader = () => {
                         value="შესვლა"
                         onClick={() => navigate("/sigIn")}
                     ></LabelInput>
-                    <LabelInput type="button" value="რეგისტრაცია"></LabelInput>
+                    <LabelInput
+                        type="button"
+                        value="რეგისტრაცია"
+                        onClick={() => navigate("/signup")}
+                    ></LabelInput>
                 </LendigDivtyled>
                 <SelectOption option={lenguage} name="lenguage" />
             </LendigNavStyled>

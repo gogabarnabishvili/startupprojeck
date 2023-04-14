@@ -4,7 +4,7 @@ import { SiginFormStyled } from "../Sign-In/SignInStyled";
 import useState from "react-hook-use-state";
 import saveExpenses from "../../function/local-store/LocalStore";
 import BackExpenses from "../../function/local-back/LocalInfoBack";
-const users = [];
+
 const SiginUp = () => {
     const navigate = useNavigate();
     const [name, setName] = useState("");
@@ -30,14 +30,14 @@ const SiginUp = () => {
             rePassword === password &&
             email !== ""
         ) {
-            users.push({
+            const users = {
                 name: name,
                 password: password,
                 email: email,
                 id: BackExpenses("users")
                     ? BackExpenses("users").length + 1
                     : 1,
-            });
+            };
             console.log(users);
             saveExpenses(users, "users");
             clearValue();
@@ -76,14 +76,20 @@ const SiginUp = () => {
                 onChange={onEmailChange}
             />
             <LabelInput
-                value="sigin in"
+                value="join"
                 name="siginIn"
                 type="button"
                 onClick={UsersSave}
             />
-            <Link to={"/mainpage"}>
+            <LabelInput
+                value="sigin in"
+                name="siginIn"
+                type="button"
+                onClick={() => navigate("/sigIn")}
+            />
+            {/* <Link to={"/mainpage"}>
                 <LabelInput value="main page" name="main" type="button" />
-            </Link>
+            </Link> */}
         </SiginFormStyled>
     );
 };
