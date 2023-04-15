@@ -18,11 +18,13 @@ const LendigHeader = () => {
             <LendigNavStyled>
                 <LendigDivtyled>
                     <LabelInput
+                        name="btnJoin"
                         type="button"
                         value="შესვლა"
                         onClick={() => navigate("/sigIn")}
                     ></LabelInput>
                     <LabelInput
+                        name="btnReg"
                         type="button"
                         value="რეგისტრაცია"
                         onClick={() => navigate("/signup")}

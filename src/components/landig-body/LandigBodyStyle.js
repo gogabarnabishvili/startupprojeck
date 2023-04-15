@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const LandigBodyWraperStyled = styled.div`
-    display: flexl;
+    display: flex;
+    justify-content: space-around;
 `;
 export const LandigBodyBoxStyled = styled.div`
     display: flex;
@@ -20,6 +21,7 @@ export const LandigBodyTitleBoxStyled = styled.div`
 export const LandigBodyTitleStyled = styled.h1``;
 export const LandigBodyImgStyled = styled.img`
     width: 500px;
+    height: 516px;
 `;
 export const LandigBodyPStyled = styled.p`
     width: 100px;

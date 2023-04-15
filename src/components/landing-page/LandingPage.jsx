@@ -2,7 +2,7 @@ import {
     LendigPageStyled,
     LendigBoxStyled,
     LendigHeaderStyled,
-} from "./LendingPageStyled";
+} from "./LandingPageStyled";
 import { Link } from "react-router-dom";
 import LandingNav from "../Landig-Page-navigeit/LandigNav";
 import LandigBody from "../landig-body/LandigBody";

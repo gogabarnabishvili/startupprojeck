@@ -87,9 +87,6 @@ const SiginUp = () => {
                 type="button"
                 onClick={() => navigate("/sigIn")}
             />
-            {/* <Link to={"/mainpage"}>
-                <LabelInput value="main page" name="main" type="button" />
-            </Link> */}
         </SiginFormStyled>
     );
 };

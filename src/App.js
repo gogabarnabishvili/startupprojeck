@@ -3,7 +3,7 @@ import SignIn from "./components/Sign-In/SignIn";
 import SignUp from "./components/Sign-Up/SignUp";
 import MainPage from "./components/Main-page/MainPage";
 import ProfileFeed from "./components/Profile-Feed/ProfileFeed";
-import LandingPage from "./components/lending-page/LendingPage";
+import LandingPage from "./components/landing-page/LandingPage";
 import {
     createBrowserRouter,
     createRoutesFromElements,
