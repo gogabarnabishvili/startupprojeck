@@ -24,10 +24,14 @@ export const LandigBodyImgStyled = styled.img`
     height: 516px;
 `;
 export const LandigBodyPStyled = styled.p`
-    width: 100px;
-    height: 50px;
+    width: 220px;
+    height: 120px;
     border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+`;
+export const LandigBodySpanStyled = styled.span`
+    color: red;
+    cursor: pointer;
 `;

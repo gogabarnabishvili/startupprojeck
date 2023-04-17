@@ -1,9 +1,11 @@
 import LabelInput from "../Label-Input/LabelInput";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { SiginFormStyled } from "../Sign-In/SignInStyled";
 import useState from "react-hook-use-state";
 import saveExpenses from "../../function/local-store/LocalStore";
 import BackExpenses from "../../function/local-back/LocalInfoBack";
+import LendigHeader from "../Landig-Page-navigeit/LandigNav";
+import LandigFooter from "../landig-footer/LandigFooter";
 
 const SiginUp = () => {
     const navigate = useNavigate();
@@ -28,7 +30,9 @@ const SiginUp = () => {
             name !== "" &&
             password !== "" &&
             rePassword === password &&
-            email !== ""
+            email !== "" &&
+            name.length >= 4 &&
+            password.length >= 8
         ) {
             const users = {
                 name: name,
@@ -38,7 +42,7 @@ const SiginUp = () => {
                     ? BackExpenses("users").length + 1
                     : 1,
             };
-            console.log(users);
+
             saveExpenses(users, "users");
             clearValue();
             navigate("/");
@@ -50,10 +54,12 @@ const SiginUp = () => {
 
     return (
         <SiginFormStyled>
+            <LendigHeader />
             <LabelInput
                 text="name"
                 name="name"
                 type="text"
+                placeholder="min charachter 4"
                 onChange={onNameChange}
             />
 
@@ -61,6 +67,7 @@ const SiginUp = () => {
                 text="password"
                 name="password"
                 type="password"
+                placeholder="min character 8"
                 onChange={onPasswordChange}
             />
             <LabelInput
@@ -87,6 +94,7 @@ const SiginUp = () => {
                 type="button"
                 onClick={() => navigate("/sigIn")}
             />
+            <LandigFooter />
         </SiginFormStyled>
     );
 };

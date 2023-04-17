@@ -7,10 +7,17 @@ import {
 } from "./LandigNavStyled";
 import SelectOption from "../lenguage-select/SelectOption";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import TEXTS from "../text/Text";
+import { LanguageContext } from "../lenguage-change/LenguageChange";
+
 const logo = require("../../img-icons/logo.webp");
 
-const lenguage = ["geo", "en", "rus"];
 const LendigHeader = () => {
+    const [lenguage1, setLenguage] = useState("geo");
+    const { language, updateLang } = useContext(LanguageContext);
+    updateLang(lenguage1);
+
     const navigate = useNavigate();
     return (
         <LendigHeaderStyled>
@@ -20,17 +27,18 @@ const LendigHeader = () => {
                     <LabelInput
                         name="btnJoin"
                         type="button"
-                        value="შესვლა"
+                        value={TEXTS[language].signin}
                         onClick={() => navigate("/sigIn")}
                     ></LabelInput>
                     <LabelInput
                         name="btnReg"
                         type="button"
-                        value="რეგისტრაცია"
+                        value={TEXTS[language].signup}
                         onClick={() => navigate("/signup")}
                     ></LabelInput>
                 </LendigDivtyled>
-                <SelectOption option={lenguage} name="lenguage" />
+
+                <SelectOption onChange={(e) => setLenguage(e.target.value)} />
             </LendigNavStyled>
         </LendigHeaderStyled>
     );
